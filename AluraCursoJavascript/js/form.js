@@ -5,11 +5,9 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", function() {
     event.preventDefault();    
     var form = document.querySelector("#form-adiciona");
-
     var paciente = obtemPacientedoForm(form); // Ele usará as informações da variável 'form' (que por sua vez vem do 'document').
-
-    var pacienteTr = montarTr(paciente); // Ele usará as informações já criadas na função 'obtemPacienteDoForm' (que está contido na variável 'paciente').
-
+    // var pacienteTr = montarTr(paciente); // Ele usará as informações já criadas na função 'obtemPacienteDoForm' (que está contido na variável 'paciente').
+    
     var erro = validaPaciente(paciente);
     console.log(erro);
 
@@ -18,12 +16,18 @@ botaoAdicionar.addEventListener("click", function() {
        return;
     }    
 
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteTabela(paciente);
+
     form.reset();
     var mensagensErro = document.querySelector("#mensagens-erro");
     mensagensErro.innerHTML = "";
 });
+
+function adicionaPacienteTabela(paciente){
+    var pacienteTr = montarTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagemErros(erro) {
     var ul = document.querySelector("#mensagens-erro");

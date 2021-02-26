@@ -21,14 +21,12 @@ for(var i = 0; i < pacientes.length; i++){
 
     if(!infoValidaPeso){
         console.log("Peso inválido!");
-        tdImc.textContent = "Peso inválido"
-        infoValida = false;        
+        tdImc.textContent = "Peso inválido"               
     }
 
     if(!infoValidaAltura){
         console.log("Altura inválido!");
-        tdImc.textContent = "Altura inválida"
-        infoValida = false;        
+        tdImc.textContent = "Altura inválida"               
     }
 
     if (infoValidaAltura == true && infoValidaPeso == true){
@@ -59,5 +57,5 @@ function calcularImc(peso, altura) {
     var imc = 0
     imc = (peso / (altura * altura));
 
-    return imc.toFixed(1);
+    return imc.toFixed(2);
 }
