@@ -10,7 +10,7 @@ public class Collections1 {
 
         // Adding array items to list
 
-        for(String x: things) {
+        for(String x: things) { // Ussing an enhanced for-each loop
             list1.add(x);
         }
 
