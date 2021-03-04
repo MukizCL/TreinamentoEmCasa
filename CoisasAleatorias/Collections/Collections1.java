@@ -8,9 +8,8 @@ public class Collections1 {
         String[] things = {"eggs", "lasers", "hats", "pie"};
         List<String> list1 = new ArrayList<String>();
 
-        // Adding array items to list
-
-        for(String x: things) { // Ussing an enhanced for-each loop
+        // Adding array items to list:
+        for(String x: things) { // Ussing an enhanced for-each loop.
             list1.add(x);
         }
 
