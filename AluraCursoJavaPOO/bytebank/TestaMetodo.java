@@ -4,22 +4,19 @@ public class TestaMetodo {
     public static void main(String[] args) {
         Conta contaDoPaulo = new Conta();
 
-        contaDoPaulo.saldo = 100;
+        contaDoPaulo.setSaldo(500);
         contaDoPaulo.deposita(50);
-        System.out.println(contaDoPaulo.saldo);
+        System.out.println(contaDoPaulo.getSaldo());
         contaDoPaulo.saca(20);
-        System.out.println(contaDoPaulo.saldo);
+        System.out.println(contaDoPaulo.getSaldo());
 
         Conta contaDaMarcela = new Conta();
 
         contaDaMarcela.deposita(1000);
-        System.out.println(contaDaMarcela.saldo);
-        System.out.println(contaDoPaulo.saldo);
+        System.out.println(contaDaMarcela.getSaldo());
+        System.out.println(contaDoPaulo.getSaldo());
         contaDaMarcela.transfere(2000, contaDoPaulo);
-        System.out.println(contaDaMarcela.saldo);
-        System.out.println(contaDoPaulo.saldo);
-
-        contaDoPaulo.titular = "Paulo Silveira";
-
+        System.out.println(contaDaMarcela.getSaldo());
+        System.out.println(contaDoPaulo.getSaldo());
     }
 }
