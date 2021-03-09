@@ -1,3 +1,5 @@
+package bytebank2;
+
 public class Conta {
 
 	private double saldo;
