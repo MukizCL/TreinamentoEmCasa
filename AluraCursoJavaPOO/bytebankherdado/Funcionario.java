@@ -1,6 +1,6 @@
 package bytebankherdado;
 
-public class Funcionario {
+public abstract class Funcionario { // Abstract na classe significa que não pode dar '... = new'.
 
     private String nome;
     private String cpf;
@@ -39,8 +39,10 @@ public class Funcionario {
 
     // Metodos
 
-    public double getBonificacao() {
-        System.out.println("Chamando o método do Funcionário!");
-        return this.salario * 0.05;
-    }
+    public abstract double getBonificacao(); // Métodos abstracts não tem corpo. Sem implementação.
+
+//   public double getBonificacao() {
+//        System.out.println("Chamando o método do Funcionário!");
+//        return this.salario * 0.05;
+//    }
 }
