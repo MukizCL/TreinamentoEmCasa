@@ -1,7 +1,6 @@
 package bytebankherdado;
 
 public abstract class Funcionario { // Abstract na classe significa que não pode dar '... = new'.
-
     private String nome;
     private String cpf;
     private double salario;
