@@ -1,7 +1,7 @@
 package bytebankherdadoconta;
 
 public class TesteContas {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SaldoInsuficienteException {
         int a = 3;
         int b = a / 0;
 
