@@ -1,4 +1,4 @@
-package bytebankherdadoconta;
+package bytebankherdadoconta.teste.br.com.bytebank.banco.modelo;
 
 public class ContaPoupanca extends Conta {
 
