@@ -22,5 +22,6 @@ public class TesteArrayReferencias {
 
         ContaPoupanca ref = (ContaPoupanca) referencias[1];
         System.out.println(ref.getNumero());
+
     }
 }
