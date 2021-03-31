@@ -1,6 +1,6 @@
 package bytebank;
 
-public class Cliente {
+public class Cliente extends bytebankherdadoconta.teste.br.com.bytebank.banco.modelo.Cliente {
     private String nome;
     private String cpf;
     private String profissao;

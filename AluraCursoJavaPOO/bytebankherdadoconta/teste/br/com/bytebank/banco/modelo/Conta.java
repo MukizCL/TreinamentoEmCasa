@@ -6,7 +6,7 @@ package bytebankherdadoconta.teste.br.com.bytebank.banco.modelo;
  * @author Samuel
  */
 
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta>{
 
 	protected double saldo;
 	private int agencia;
@@ -112,11 +112,14 @@ public abstract class Conta {
 
 	@Override
 	public String toString() {
-		return "Conta{" +
-				"saldo=" + saldo +
-				", agencia=" + agencia +
-				", numero=" + numero +
-				", titular=" + titular +
-				'}';
+		return "Conta ->" +
+				" Saldo = " + saldo +
+				", Agencia = " + agencia +
+				", Número = " + numero;
+	}
+
+	@Override
+	public int compareTo(Conta outra) {
+		return Double.compare(this.saldo, outra.saldo);
 	}
 }

@@ -6,11 +6,11 @@ import bytebankherdadoconta.teste.br.com.bytebank.banco.modelo.ContaCorrente;
 import bytebankherdadoconta.teste.br.com.bytebank.banco.modelo.ContaPoupanca;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
-public class Teste {
+public class TesteClasseAnonima {
 
     public static void main(String[] args) {
 
@@ -50,21 +50,32 @@ public class Teste {
             System.out.println(conta);
         }
 
-        // Nessa ______, sorteie usando como parâmetro a receber (x e y) dessa maneira -> ______;
-        lista.sort(                                                         // Lambda - Sem usar o 'new Comparator<Conta>()', sem usar return e sem iniciar um novo método com 'public int compare(Conta c1, Conta c2)'.
-                (Conta c1, Conta c2) -> Integer.compare(c1.getNumero(), c2.getNumero())
-        );
+        lista.sort(new Comparator<Conta>() {                                // Classe anônima 1#.
+                @Override
+                public int compare(Conta c1, Conta c2) {
+                    return Integer.compare(c1.getNumero(), c2.getNumero());
+                }
+            });
 
-        Comparator<Conta> comp = (Conta c1, Conta c2) -> {                  // Lambda - Sem usar o '... = new' e sem iniciar um novo método com 'public int compare'.
+        Comparator<Conta> comp = new Comparator<Conta>() {                  // Classe anônima 2#.
+            @Override
+            public int compare(Conta c1, Conta c2) {
                 String nomeConta1 = c1.getTitular().getNome();
                 String nomeConta2 = c2.getTitular().getNome();
-                return nomeConta1.compareToIgnoreCase(nomeConta2);
+
+                // Iguais -> int = 0 | O da esquerda for menor -> int = -n | O da esquerda for maior -> int = +n
+                int resultado = nomeConta1.compareToIgnoreCase(nomeConta2);
+
+                return resultado;
+            }
         };
 
         System.out.println("---------");
 
-        // Nessa ______, para cada (______) faça -> ______;
-        lista.forEach( (Conta conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()) );
+        for (Conta conta : lista) {
+            System.out.println(conta);
+        }
+
 
     }
 }
